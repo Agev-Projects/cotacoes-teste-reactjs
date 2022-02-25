@@ -24,9 +24,9 @@ const Historico = () => {
   }, []);
 
   return (
-    <Container fluid>
-      <h2 style={{ textAlign: "center" }}>Histórico de Cotações</h2>
+    <Container>
       <Row className="gy-4 justify-content-center">
+        <h2 style={{ textAlign: "center" }}>Histórico de Cotações</h2>
         {values.length !== 0 ? (
           values.map((items, index) => {
             return (
