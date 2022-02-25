@@ -22,20 +22,21 @@ const Historico = () => {
 
   useEffect(() => {
     getKeys();
+    console.log(values);
   }, []);
 
   return (
     <Container fluid>
       <h2 style={{ textAlign: "center" }}>Histórico de Cotaçoes</h2>
-      <Row sm={2} md={3} className="gy-4">
+      <Row className="gy-4">
         {values.length !== 0 ? (
           values.map((items, index) => {
             return (
-              <Col>
+              <Col sm={2} md={3}>
                 <Card style={{ width: "18rem" }} key={index}>
                   {items.map((item, index) => {
                     return (
-                      <Card.Body>
+                      <Card.Body key={index}>
                         <Card.Title>{`Cotação de ${item.valor}${item.moeda} -> ${item.moedasDestino}`}</Card.Title>
                         <Card.Subtitle>{`Data: ${item.date}`}</Card.Subtitle>
                         <Card.Text>
