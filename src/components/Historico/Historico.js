@@ -22,12 +22,11 @@ const Historico = () => {
 
   useEffect(() => {
     getKeys();
-    console.log(values);
   }, []);
 
   return (
     <Container fluid>
-      <h2 style={{ textAlign: "center" }}>Histórico de Cotaçoes</h2>
+      <h2 style={{ textAlign: "center" }}>Histórico de Cotações</h2>
       <Row className="gy-4">
         {values.length !== 0 ? (
           values.map((items, index) => {
