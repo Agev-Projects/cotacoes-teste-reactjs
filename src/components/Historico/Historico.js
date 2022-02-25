@@ -26,11 +26,11 @@ const Historico = () => {
   return (
     <Container fluid>
       <h2 style={{ textAlign: "center" }}>Histórico de Cotações</h2>
-      <Row className="gy-4">
+      <Row className="gy-4 justify-content-center">
         {values.length !== 0 ? (
           values.map((items, index) => {
             return (
-              <Col sm={2} md={3}>
+              <Col>
                 <Card style={{ width: "18rem" }} key={index}>
                   {items.map((item, index) => {
                     return (
