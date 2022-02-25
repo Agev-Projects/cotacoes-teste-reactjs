@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import dayjs from "dayjs";
+import { v4 as uuidv4 } from "uuid";
 import api from "../../api/api.js";
 
 import "../../styles/globalStyles.css";
@@ -46,10 +46,7 @@ const Resultado = ({
         resultado: conversaoMoeda(data[item].ask),
       };
     });
-    localStorage.setItem(
-      dayjs().format("DD/MM/YYYY hh:mm a"),
-      JSON.stringify(array)
-    );
+    localStorage.setItem(uuidv4(), JSON.stringify(array));
   };
 
   useEffect(() => {

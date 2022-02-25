@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import dayjs from "dayjs";
 
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
@@ -52,7 +51,7 @@ const Historico = () => {
             );
           })
         ) : (
-          <h6 style={{ textAlign: "center" }}>Nenhuma cotaçao feita</h6>
+          <h6 style={{ textAlign: "center" }}>Nenhuma cotação feita</h6>
         )}
       </Row>
     </Container>
