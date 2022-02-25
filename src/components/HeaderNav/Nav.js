@@ -23,8 +23,8 @@ const HeaderNav = () => {
         <Navbar.Toggle />
         <Navbar.Collapse>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#historico">Histórico</Nav.Link>
+            <Nav.Link>Home</Nav.Link>
+            <Nav.Link>Histórico</Nav.Link>
             <Nav.Link href="https://docs.awesomeapi.com.br/api-de-moedas">
               Documentação
             </Nav.Link>

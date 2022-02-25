@@ -7,7 +7,8 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Dropdown from "react-bootstrap/Dropdown";
 import Form from "react-bootstrap/Form";
-import Alert from "react-bootstrap/Alert";
+
+import AlertForm from "./AlertForm.js";
 
 const FormMoedas = ({
   moedaOrigem,
@@ -59,6 +60,15 @@ const FormMoedas = ({
     setMoedaOrigem(value);
   };
 
+  const handleDisabled = (code) => {
+    if (moedaOrigem !== "Moeda" && valorOrigem) {
+      if (moedaOrigem === code) {
+        return true;
+      }
+      return false;
+    } else return true;
+  };
+
   return (
     <main>
       <Container fluid>
@@ -98,11 +108,7 @@ const FormMoedas = ({
                 value="USD"
                 label="USD"
                 onChange={(e) => handleCheckBoxChange(e)}
-                disabled={
-                  moedaOrigem === "USD" || moedaOrigem === "Moeda"
-                    ? true
-                    : false
-                }
+                disabled={handleDisabled("USD") ? true : false}
               />
 
               <Form.Check
@@ -111,11 +117,7 @@ const FormMoedas = ({
                 value="EUR"
                 label="EUR"
                 onChange={(e) => handleCheckBoxChange(e)}
-                disabled={
-                  moedaOrigem === "EUR" || moedaOrigem === "Moeda"
-                    ? true
-                    : false
-                }
+                disabled={handleDisabled("EUR") ? true : false}
               />
 
               <Form.Check
@@ -124,11 +126,7 @@ const FormMoedas = ({
                 value="BRL"
                 label="BRL"
                 onChange={(e) => handleCheckBoxChange(e)}
-                disabled={
-                  moedaOrigem === "BRL" || moedaOrigem === "Moeda"
-                    ? true
-                    : false
-                }
+                disabled={handleDisabled("BRL") ? true : false}
               />
 
               <Form.Check
@@ -137,25 +135,19 @@ const FormMoedas = ({
                 value="CAD"
                 label="CAD"
                 onChange={(e) => handleCheckBoxChange(e)}
-                disabled={
-                  moedaOrigem === "CAD" || moedaOrigem === "Moeda"
-                    ? true
-                    : false
-                }
+                disabled={handleDisabled("CAD") ? true : false}
               />
             </Col>
           </Row>
           <Row className="justify-content-md-center mt-4">
             {alert ? (
               <Col>
-                <Alert
-                  variant="danger"
-                  onClose={() => setAlert(false)}
-                  dismissible
-                >
-                  Você precisa selecionar uma moeda de Origem e de Destino e
-                  inserir um valor inicial
-                </Alert>
+                <AlertForm
+                  setAlert={setAlert}
+                  valorOrigem={valorOrigem}
+                  moedaOrigem={moedaOrigem}
+                  moedaDestino={moedaDestino}
+                />
               </Col>
             ) : (
               <></>
