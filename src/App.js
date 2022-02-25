@@ -1,8 +1,6 @@
-import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./styles/globalStyles.css";
-import Container from "react-bootstrap/Container";
 
 import HeaderNav from "./components/HeaderNav/Nav";
 import Home from "./components/Home/Home.js";

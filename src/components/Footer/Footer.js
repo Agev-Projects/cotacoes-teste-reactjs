@@ -2,7 +2,7 @@ import "../../styles/globalStyles.css";
 
 const Footer = () => {
   return (
-    <footer className="App mb-2">
+    <footer className="App mb-2 mt-4">
       <p className="h6">
         Este projeto utiliza as APIs públicas "Awesome" para realizar as
         cotações:
