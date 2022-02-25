@@ -1,4 +1,5 @@
 import dayjs from "dayjs";
+import { Link } from "react-router-dom";
 
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
@@ -8,7 +9,7 @@ import logo from "./logo.svg";
 
 const HeaderNav = () => {
   return (
-    <Navbar sticky="top" bg="info" variant="light" expand="lg">
+    <Navbar bg="info" variant="light" expand="lg">
       <Container fluid>
         <Navbar.Brand>
           <img
@@ -22,9 +23,13 @@ const HeaderNav = () => {
         </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse>
-          <Nav className="me-auto">
-            <Nav.Link>Home</Nav.Link>
-            <Nav.Link>Histórico</Nav.Link>
+          <Nav className="me-auto font-weight-bold">
+            <Nav.Link as={Link} to="/">
+              Home
+            </Nav.Link>
+            <Nav.Link as={Link} to="/historico">
+              Histórico
+            </Nav.Link>
             <Nav.Link href="https://docs.awesomeapi.com.br/api-de-moedas">
               Documentação
             </Nav.Link>

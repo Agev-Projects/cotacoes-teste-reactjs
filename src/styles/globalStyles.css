@@ -14,3 +14,18 @@
 .App-link {
   color: #61dafb;
 }
+
+.BRL {
+  color: royalblue;
+}
+.USD {
+  color: green;
+}
+
+.EUR {
+  color: darkred;
+}
+
+.CAD {
+  color: crimson;
+}
