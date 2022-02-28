@@ -1,3 +1,4 @@
+import { useState } from "react";
 import dayjs from "dayjs";
 import { Link } from "react-router-dom";
 
@@ -8,8 +9,10 @@ import Container from "react-bootstrap/Container";
 import logo from "./logo.svg";
 
 const HeaderNav = () => {
+  const [expanded, setExpanded] = useState(false);
+
   return (
-    <Navbar bg="info" variant="light" expand="lg">
+    <Navbar bg="info" variant="light" expand="lg" expanded={expanded}>
       <Container fluid>
         <Navbar.Brand>
           <img
@@ -21,13 +24,17 @@ const HeaderNav = () => {
           />{" "}
           Cotação Express
         </Navbar.Brand>
-        <Navbar.Toggle />
+        <Navbar.Toggle onClick={() => setExpanded(expanded ? false : true)} />
         <Navbar.Collapse>
           <Nav className="me-auto font-weight-bold">
-            <Nav.Link as={Link} to="/">
+            <Nav.Link as={Link} to="/" onClick={() => setExpanded(false)}>
               Home
             </Nav.Link>
-            <Nav.Link as={Link} to="/historico">
+            <Nav.Link
+              as={Link}
+              to="/historico"
+              onClick={() => setExpanded(false)}
+            >
               Histórico
             </Nav.Link>
             <Nav.Link href="https://docs.awesomeapi.com.br/api-de-moedas">
