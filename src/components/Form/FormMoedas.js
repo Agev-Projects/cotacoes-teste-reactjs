@@ -74,11 +74,11 @@ const FormMoedas = ({
       <Container fluid>
         <h1 className="h1 mb-4 text-secondary">Cotação de Moedas</h1>
         <Form.Group>
-          <Row className="justify-content-center gy-3 mb-5">
+          <Row className="justify-content-center gy-3 gx-4 mb-5">
             <Form.Label className="text-secondary">
               Selecione a moeda e o valor de origem:
             </Form.Label>
-            <Col md={2} lg={1}>
+            <Col md="auto">
               <Dropdown onSelect={(eventKey) => handleClick(eventKey)}>
                 <Dropdown.Toggle variant="info">{moedaOrigem}</Dropdown.Toggle>
                 <Dropdown.Menu>
@@ -89,7 +89,7 @@ const FormMoedas = ({
                 </Dropdown.Menu>
               </Dropdown>
             </Col>
-            <Col md={3} lg={2}>
+            <Col lg={2}>
               <NumberFormat
                 className="form-control"
                 onValueChange={(value) => handleInputChange(value)}

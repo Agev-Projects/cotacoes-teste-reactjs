@@ -8,7 +8,8 @@ import "../../styles/globalStyles.css";
 
 const Historico = () => {
   const [values, setValues] = useState([]);
-  console.log(values);
+
+  //Lê dados do LocalStorage
   const getKeys = () => {
     for (let i = 0; i < localStorage.length; i++) {
       console.log(localStorage.getItem(localStorage.key(i)));
@@ -30,7 +31,7 @@ const Historico = () => {
         {values.length !== 0 ? (
           values.map((items, index) => {
             return (
-              <Col>
+              <Col className="d-flex justify-content-center">
                 <Card style={{ width: "18rem" }} key={index}>
                   {items.map((item, index) => {
                     return (
